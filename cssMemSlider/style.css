@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.slider {
+    width: 100%;
+    min-height: 90vh;
+    max-width: 900px;
+    margin: 5vh auto;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+}
+
+.slider .imgBx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.slider .imgBx .wrapp {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.slider .wrapp-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#slide1:checked~.imgBx .wrapp .wrapp-label label:nth-child(1) span {
+    border: 2px solid rgb(59, 89, 255);
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+#slide1:checked~.imgBx .wrapp .wrapp-label label:nth-child(1):hover span {
+    border-color: tomato;
+}
+
+#slide2:checked~.imgBx .wrapp .wrapp-label label:nth-child(2) span {
+    border: 2px solid rgb(59, 89, 255);
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#slide2:checked~.imgBx .wrapp .wrapp-label label:nth-child(2):hover span {
+    border-color: tomato;
+}
+
+#slide3:checked~.imgBx .wrapp .wrapp-label label:nth-child(3) span {
+    border: 2px solid rgb(59, 89, 255);
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#slide3:checked~.imgBx .wrapp .wrapp-label label:nth-child(3):hover span {
+    border-color: tomato;
+}
+
+
+.slider .wrapp-label label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.slider .wrapp-label label span {
+    background-color: rgb(59, 89, 255);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider .wrapp-label label:hover span {
+    background-color: tomato;
+}
+
+
+.slider .imgBx .wrapp p {
+    opacity: 0;
+}
+
+
+.slider .imgBx img {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* max-height: 600px; */
+    /* object-fit: cover; */
+    transition: 0.5s;
+    z-index: 1;
+    clip-path: circle(0px at left);
+}
+
+.slider input[type="radio"]:checked+.imgBx img {
+    z-index: 100;
+    clip-path: circle(2000px at left);
+    transition-delay: 0.5s;
+}
+
+.slider input[type="radio"]:checked+.imgBx .wrapp p {
+    transition: 4s all;
+    opacity: 1;
+}
+
+.slider input[type="radio"] {
+    position: relative;
+    z-index: 1000;
+    margin: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+
+input[type="radio"] {
+    visibility: hidden;
+}
+
+@media (max-width: 767px) {
+    .slider .imgBx .wrapp {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .slider .imgBx img {
+        height: 75%;
+    }
+
+    .slider .wrapp-label {
+        order: 1;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .slider .imgBx .wrapp p {
+        order: 2;
+    }
+
+
+}
