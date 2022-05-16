@@ -5,6 +5,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    width: 90vw;
+    margin: 0 auto;
+}
+
 .slider {
     width: 100%;
     min-height: 90vh;
@@ -30,6 +35,75 @@
     justify-content: space-between;
     margin-top: 20px;
 }
+
+.slider .wrapp-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#slide1:checked~.imgBx .wrapp .wrapp-label label:nth-child(1) span {
+    border: 2px solid rgb(59, 89, 255);
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+#slide1:checked~.imgBx .wrapp .wrapp-label label:nth-child(1):hover span {
+    border-color: tomato;
+}
+
+#slide2:checked~.imgBx .wrapp .wrapp-label label:nth-child(2) span {
+    border: 2px solid rgb(59, 89, 255);
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#slide2:checked~.imgBx .wrapp .wrapp-label label:nth-child(2):hover span {
+    border-color: tomato;
+}
+
+#slide3:checked~.imgBx .wrapp .wrapp-label label:nth-child(3) span {
+    border: 2px solid rgb(59, 89, 255);
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#slide3:checked~.imgBx .wrapp .wrapp-label label:nth-child(3):hover span {
+    border-color: tomato;
+}
+
+
+.slider .wrapp-label label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.slider .wrapp-label label span {
+    background-color: rgb(59, 89, 255);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider .wrapp-label label:hover span {
+    background-color: tomato;
+}
+
 
 .slider .imgBx .wrapp p {
     opacity: 0;
@@ -58,30 +132,6 @@
     opacity: 1;
 }
 
-.slider .wrapp-label {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.slider .wrapp-label label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-}
-
-.slider .wrapp-label label span {
-    background-color: green;
-    display: flex;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
 .slider input[type="radio"] {
     position: relative;
     z-index: 1000;
@@ -89,6 +139,7 @@
     cursor: pointer;
     outline: none;
 }
+
 
 input[type="radio"] {
     visibility: hidden;
